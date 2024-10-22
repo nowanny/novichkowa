@@ -1,0 +1,4 @@
+#var10
+str=input('введите строку:')
+nstr=str.title()
+print('новая строка:', nstr)
