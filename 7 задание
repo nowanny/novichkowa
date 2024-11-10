@@ -1,0 +1,30 @@
+#var10
+#1
+def find_dup(input_list):
+    dup=[]
+    a=[]
+    for item in input_list:
+        if item in a and item not in dup:
+            dup.append(item)
+        else:
+            a.append(item)
+    if dup:
+        print("повторяющиеся:", dup)
+    else:
+        print("повторяющихся нет")
+list = [1, 2, 3, 7, 5, 2, 7, 9, 3, 2, 4]
+find_dup(list)
+
+#2
+import random
+m=[random.randint(0, 30) for _ in range(15)]
+print("первоначальный массив:", m)
+transformed_m=[]
+for v in m:
+    if v < 10:
+        transformed_m.append(0)
+    elif v > 20:
+        transformed_m.append(1)
+    else:
+        transformed_m.append(v)
+print("преобразованный:", transformed_m)
