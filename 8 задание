@@ -1,0 +1,31 @@
+#var3
+#1
+import math
+cat1_a = 5  
+cat1_b = 2  
+cat2_a = 7
+cat2_b = 18
+def calculate_gip(cat1, cat2):
+    return math.sqrt(cat1**2 + cat2**2)
+def com_gip(cat1_a, cat1_b, cat2_a, cat2_b):
+    gip1 = calculate_gip(cat1_a, cat1_b)
+    gip2 = calculate_gip(cat2_a, cat2_b)
+    print(f"гипотенуза первого треугольника: {gip1:.2f}")
+    print(f"гипотенуза второго треугольника: {gip2:.2f}")
+    if gip1 > gip2:
+        print("гипотенуза первого больше")
+    elif gip1 < gip2:
+        print("гипотенуза второго больше")
+    else:
+        print("гипотенузы равны")
+com_gip(cat1_a, cat1_b, cat2_a, cat2_b)
+
+#2
+input_str = "привет мир"
+def sort_letters_in_words(input_str):
+    words=input_str.split()
+    sorted_words=[''.join(sorted(word)) for word in words]
+    res=' '.join(sorted_words)
+    return res
+output_str = sort_letters_in_words(input_str)
+print(output_str)
