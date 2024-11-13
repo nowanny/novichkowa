@@ -1,0 +1,38 @@
+#var3
+#1
+matr=[[10, 8, 2],
+      [8, 1, 6],
+      [2, 6, 10] ]
+def symm(matr):
+    x=len(matr)
+    for i in range(x):
+        for j in range(i, x): 
+            if matr[i][j] != matr[j][i]:
+                return False 
+    return True  
+if symm(matr):
+    print("симметрична")
+else:
+    print("не симметрична")
+#2
+matr=[[1.5, 2.3, 3.1, 13.4],
+      [4.7, 5.8, 6.9, 1.6],
+      [7.2, 8.4, 9.0, 22.9]]
+def m(matr):
+    max=float()
+    maxi, maxj = -1, -1
+    for i in range(len(matr)):
+        for j in range(len(matr[i])):
+            if matr[i][j] > max:
+                max=matr[i][j]
+                maxi, maxj=i, j
+    if maxi != 0:
+        matr[0], matr[maxi]=matr[maxi], matr[0]
+    if maxj != 0:
+        for rw in matr:
+            rw[0], rw[maxj]=rw[maxj], rw[0]
+    return matr
+res=m(matr)
+print("измененная матрица")
+for rw in res:
+    print(rw)
