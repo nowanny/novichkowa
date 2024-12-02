@@ -1,0 +1,38 @@
+#блокA_1
+x = int(input("введите натуральное число x: "))
+n = int(input("введите натуральное число n: "))
+
+def power(x, n):
+    if n == 0:
+        return 1
+    else:
+        return x * power(x, n - 1) 
+        
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1 
+    else:
+        return n * factorial(n - 1)  
+        
+def expression(x, n):
+    return power(x, n) / factorial(n)
+    
+res = expression(x, n)
+print(f"результат выражения {x}^{n} / {n}! = {res}")
+
+#блокБ_1
+def find_max():
+    num = int(input("введите натуральное число, 0 для завершения "))
+    
+    if num == 0:
+        return -1 
+
+    max_of_res = find_max()
+    
+    if max_of_res == -1:
+        return num  
+
+    return max(num, max_of_res)
+
+max_val = find_max()
+print("наибольшее значение в последовательности ", max_val)
